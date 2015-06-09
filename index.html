@@ -9,17 +9,43 @@
 
 
     <!--Some usefull link (style js etc) -->
-    <link href="css/main.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&key=AIzaSyDht1kCAjGYsnSJw3-J_G4MjSLlCw188rg"></script>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="css/main.css" rel="stylesheet">
      <script src="js/geocoder.js"></script>
   </head>
   <body>
 
-    <div id="panel">
-      <input id="address" type="textbox" value="Rome, Italy">
-      <input type="button" value="Geocode" onclick="codeAddress()">
+
+  <div id='panel' class="row text-center">
+        <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Click to open sign up on acufene website</a>
+  </div>
+  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Registry on acufene website</h4>
+        </div>
+        <div class="modal-body">
+                <input id="address" type="textbox" value="Rome, Italy">
+                <input type="button" value="Geocode" onclick="codeAddress()">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Sign up</button>
+        </div>
+      </div>
     </div>
+  </div>
+
+
+
+
+
     <div id="map-canvas"></div>
   </body>
 </html>
