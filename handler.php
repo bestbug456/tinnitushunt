@@ -17,20 +17,25 @@ function addNewAcufene(){
 
   $adress =  $_POST['address'];
 
-  $filename = "savedArray.txt"
-  
-  $handle = fopen($filename, "r");
-  $contents = fread($handle, filesize($filename));
-  fclose($handle);
+  $filename = "savedArray.txt";
+  $contents = file_get_contents($filename);
+  if($contents != ""){
+    $listAddress = unserialize($contents);
+  }else{
+    $listAddress = array();
+  }
 
-  $listAddress = unserialize($contents);
-  $listAddress[hash("sha256",$adress)]++;  
+  if($listAddress[hash("sha256",$adress)] != NULL)
+    $listAddress[hash("sha256",$adress)]++; 
+  else
+    $listAddress[hash("sha256",$adress)]=1;
 
   file_put_contents($filename, serialize($listAddress));
 
 
 
   $return["status"] = "ok";
+  $return["address_count"] = $listAddress[hash("sha256",$adress)];
   
   //Do what you need to do with the info. The following are some examples.
   //if ($return["favorite_beverage"] == ""){

@@ -88,8 +88,6 @@ function saveAddress(address){
         }
     });
     return false;
-
-
 }
 
 
