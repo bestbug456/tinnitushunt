@@ -53,7 +53,7 @@ function sLogin(){
   $social = $_POST['social'];
   try{
     $config_file_path = dirname(__FILE__).'/hybridauth/config.php';  
-    require_once(dirname(__FILE__).'/hybridauth/Auth.php');
+    require_once(dirname(__FILE__).'/hybridauth/Hybrid/Auth.php');
 
     $hybridauth = new Hybrid_Auth( $config_file_path );
 
