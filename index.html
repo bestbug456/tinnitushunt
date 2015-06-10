@@ -15,15 +15,16 @@
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="css/main.css" rel="stylesheet">
-     <script src="js/geocoder.js"></script>
+    <script src="js/geocoder.js"></script>
+    <script src="js/socialLogin.js"></script>  
   </head>
   <body>
 
 
   <div id='panel' class="row text-center">
-        <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Click to open sign up on acufene website</a>
+        <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#socialLogin">Click to open sign up on acufene website</a>
   </div>
-  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -36,7 +37,26 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Sign up</button>
+          <button type="button" class="btn btn-primary" onclick="codeAddress()">Add data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="modal fade" id="socialLogin" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Registry on acufene website</h4>
+        </div>
+        <div class="modal-body">
+          <a href="#" id="facebook">Facebook</a>
+          <a href="#" id="twitter">Twitter</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="socialLogin()">Sign up</button>
         </div>
       </div>
     </div>
