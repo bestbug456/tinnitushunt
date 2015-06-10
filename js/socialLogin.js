@@ -1,11 +1,3 @@
-$('#facebook').click(function(){
-	sendAjax("facebook");
-});
-
-$('#twitter').click(function(){
-	sendAjax("Twitter");
-});
-
 function sendAjax(socialName){
 	$.ajax({
 		type: "POST",
