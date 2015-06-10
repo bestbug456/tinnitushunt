@@ -46,4 +46,28 @@ function addNewAcufene(){
   $return["json"] = json_encode($return);
   echo json_encode($return);
 }
+
+
+Function sLogin(){
+  $social = $_POST['social'];
+  try{
+    $config_file_path = dirname(__FILE__).'/hybridauth/hybridauth.php';   
+    $hybridauth = new Hybrid_Auth( $config_file_path );
+
+    $adapter = $hybridauth->authenticate($social);
+    $user_profile = $adapter->getUserProfile();
+    
+    $return["status"] = "ok";
+    $return["socialInfo"] = serialize($user_profile);
+
+    $return["json"] = json_encode($return);
+    echo json_encode($return);
+  }catch(Exception $e){
+    $return["status"] = "error";
+    $return["errorInfo"] = serialize($e);
+
+    $return["json"] = json_encode($return);
+    echo json_encode($return);
+  }
+}
 ?>
