@@ -4,7 +4,7 @@ if (is_ajax()) {
     $action = $_POST["action"];
     switch($action) { //Switch case for value of action
       case "insert": addNewAcufene(); break;
-      case "socialLogin": sLogin();break;
+      case "socialLogin": sLogin(); break;
     }
   }
 }
@@ -49,7 +49,7 @@ function addNewAcufene(){
 }
 
 
-Function sLogin(){
+function sLogin(){
   $social = $_POST['social'];
   try{
     $config_file_path = dirname(__FILE__).'/hybridauth/hybridauth.php';   
