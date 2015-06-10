@@ -5,7 +5,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Where is my acufene?</title>
+    <title>tinnitushunt</title>
 
 
     <!--Some usefull link (style js etc) -->
@@ -14,12 +14,12 @@
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
     <link href="css/main.css" rel="stylesheet">
     <script src="js/geocoder.js"></script>
     <script src="js/socialLogin.js"></script>  
   </head>
   <body>
-
 
   <div id='panel' class="row text-center">
         <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#socialLogin">Click to open sign up on acufene website</a>
@@ -52,7 +52,7 @@
         </div>
         <div class="modal-body">
           <button id="facebook" onclick="sendAjax('facebook')">Facebook</button>
-          <button id="twitter" onclick="sendAjax('twitter')">Twitter</button>
+          <button id="twitter" onclick="twitterLogin()">Twitter</button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

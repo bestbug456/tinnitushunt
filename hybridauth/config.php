@@ -29,7 +29,7 @@ return
 
 			"Twitter" => array (
 				"enabled" => true,
-				"keys"    => array ( "key" => "", "secret" => "" )
+				"keys"    => array ( "key" => "Zv2WIwErRJMZqIHMdwf7IuhrB", "secret" => "JWBcP46rWNyrg1LFgkARFlMVFJ9mNxvnr0hVEnoW0mQTIPWhBr" )
 			),
 		),
 
