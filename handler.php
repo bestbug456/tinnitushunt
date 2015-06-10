@@ -4,6 +4,7 @@ if (is_ajax()) {
     $action = $_POST["action"];
     switch($action) { //Switch case for value of action
       case "insert": addNewAcufene(); break;
+      case "socialLogin": sLogin();break;
     }
   }
 }
