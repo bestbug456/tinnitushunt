@@ -18,18 +18,22 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="js/geocoder.js"></script>
     <script src="js/socialLogin.js"></script>  
+    <script src="js/facebookSdk.js"></script>  
+    <script src="js/facebookLogin.js"></script>  
+    <script src="js/pageEditor.js"></script>  
   </head>
   <body>
 
+
   <div id='panel' class="row text-center">
-        <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#socialLogin">Click to open sign up on acufene website</a>
+        <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Click to open sign up on acufene website</a>
   </div>
-  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
+  <div class="modal fade" id="userProfile" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Registry on acufene website</h4>
+            <h4 class="modal-title" id="myName"></h4>
         </div>
         <div class="modal-body">
                 <input id="address" type="textbox" value="Rome, Italy">
@@ -51,12 +55,11 @@
             <h4 class="modal-title" id="myModalLabel">Registry on acufene website</h4>
         </div>
         <div class="modal-body">
-          <button id="facebook" onclick="sendAjax('facebook')">Facebook</button>
-          <button id="twitter" onclick="twitterLogin()">Twitter</button>
+          <fb:login-button scope="public_profile,email" onlogin="checkLoginState()"> Log-in with facebook
+          </fb:login-button>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onclick="socialLogin()">Sign up</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="closeLogin">Close</button>
         </div>
       </div>
     </div>
@@ -67,6 +70,7 @@
 
 
     <div id="map-canvas"></div>
+
   </body>
 </html>
 
