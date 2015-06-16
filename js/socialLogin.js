@@ -7,8 +7,9 @@ function verifyLogin(){
 			    document.getElementById('myName').innerHTML =
 	          	'Thanks for logging in, ' + reply.name + '!';
 	          	$('#userProfile').modal();
+	          	document.getElementById('openModal').innerHTML = "Hello "+reply.first_name+" click to edit your profile";
 			});
-    		document.getElementById('openModal').innerHTML = "Click to edit your profile";
+    		
 		}else{
 			$('#socialLogin').modal();
 			document.getElementById('openModal').innerHTML = "Click to open sign up on acufene website";
@@ -23,6 +24,7 @@ function showForm() {
           	$('#closeLogin').click();
           	document.getElementById('myName').innerHTML =
           	'Thanks for logging in, ' + response.name + '!';
+          	
           	$('#userProfile').modal();
           	document.getElementById('openModal').innerHTML = "Click to edit your profile";
     });

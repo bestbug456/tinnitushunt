@@ -60,36 +60,5 @@ function initializeListAddress(address) {
 
 }
 
-function saveAddress(address){
-    
-    $.ajax({
-      type: "POST",
-      dataType: "json",
-      url: "http://bbug.me/works/acufene/handler.php",
-      data: {"action": "insert",
-              "address": address},
-      success: function(data) {
-        alert("Form submitted successfully.\nReturned json: " + data["json"]);
-      },
-      error: function(xhr,e){
-            if(xhr.status==0){
-                alert('You are offline!!\n Please Check Your Network.');
-            }else if(xhr.status==404){
-                alert('Requested URL not found.');
-            }else if(xhr.status==500){
-                alert('Internel Server Error.');
-            }else if(e=='parsererror'){
-                alert('Error.\nParsing JSON Request failed.');
-            }else if(e=='timeout'){
-                alert('Request Time out.');
-            }else {
-                alert('Unknow Error.\n'+x.responseText);
-            }
-        }
-    });
-    return false;
-}
-
-
 google.maps.event.addDomListener(window, 'load', initialize);
 
