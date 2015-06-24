@@ -21,12 +21,19 @@
     <script src="js/facebookSdk.js"></script>  
     <script src="js/facebookLogin.js"></script>  
     <script src="js/pageEditor.js"></script>  
+    <script src="js/formData.js"></script>
+    <script src="js/jquery.json.min"></script>  
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+    <script type="text/javascript" src="js/shareThis.js"></script>
   </head>
   <body>
 
 
   <div id='panel' class="row text-center">
-        <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Click to open sign up on acufene website</a>
+        Registro degli acufeni <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Click to open sign up on acufene website</a>
   </div>
   <div class="modal fade" id="userProfile" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
     <div class="modal-dialog">
@@ -36,12 +43,11 @@
             <h4 class="modal-title" id="myName"></h4>
         </div>
         <div class="modal-body">
-                <input id="address" type="textbox" value="Rome, Italy">
-                <input type="button" value="Geocode" onclick="codeAddress()">
+                <input id="cap" type="textbox" value="20151">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onclick="codeAddress()">Add data</button>
+          <button type="button" class="btn btn-primary" onclick="saveAddress()">Add data</button>
         </div>
       </div>
     </div>
