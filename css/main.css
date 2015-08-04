@@ -5,14 +5,59 @@ padding: 0px
 }
 #panel {
 position: absolute;
-top: 5px;
 margin-left: 0px;
 z-index: 5;
 padding: 5px;
 background-color: RGBA(0,0,0,0.5);
-
+width: 100%;
+padding-top: 5px;
 }
 
 #openModal{
-	left: 75%;
+	margin-left: 55%;
+	margin-top: 5px;
+}
+#textMenu{
+	color: white;
+	font-size: 20px;
+	padding-top: 5px;
+}
+#mc_embed_signup{
+	background:#fff; 
+	clear:left; 
+	font:14px Helvetica,Arial,sans-serif; 
+
+}
+#acufenizzati{
+	position: fixed;
+    bottom: 35px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    line-height: 1.42857143;
+    color: #2B2B2B;
+    margin-left: 45%;
+}
+.socialShareModal{
+	text-align: center;
+}
+#noAcufene{
+	position: fixed;
+	overflow: scroll;
+}
+
+
+
+
+/* Fix Bootstrap .modal compatibility with jQuery UI Autocomplete,
+see http://stackoverflow.com/questions/10957781/google-maps-autocomplete-result-in-bootstrap-modal-dialog */
+.pac-container {
+  z-index: 1050 !important;
+}
+@media (max-width: 767px) {
+  #sthoverbuttons {
+    display: none;
+  }
+  #acufenizzati{
+  	margin-left: 32%;	
+  }
 }

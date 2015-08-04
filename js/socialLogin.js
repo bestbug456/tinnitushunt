@@ -5,14 +5,14 @@ function verifyLogin(){
     		FB.api('/me', function(reply) {
 			    console.log(JSON.stringify(reply));
 			    document.getElementById('myName').innerHTML =
-	          	'Thanks for logging in, ' + reply.name + '!';
-	          	$('#userProfile').modal();
-	          	document.getElementById('openModal').innerHTML = "Hello "+reply.first_name+" click to edit your profile";
+	          	'Ciao ' + reply.name;
+          		$('#userProfile').modal();
+	          	document.getElementById('openModal').innerHTML = "Profilo";
 			});
     		
 		}else{
 			$('#socialLogin').modal();
-			document.getElementById('openModal').innerHTML = "Click to open sign up on acufene website";
+			document.getElementById('openModal').innerHTML = "Registrati";
 		}
 	});
 }
@@ -23,9 +23,9 @@ function showForm() {
       		console.log('Successful login for: ' + response.name);
           	$('#closeLogin').click();
           	document.getElementById('myName').innerHTML =
-          	'Thanks for logging in, ' + response.name + '!';
-          	
+          	'Ciao ' + response.name;
+          	getPersonalData();
           	$('#userProfile').modal();
-          	document.getElementById('openModal').innerHTML = "Click to edit your profile";
+          	document.getElementById('openModal').innerHTML = "Profilo";
     });
 }

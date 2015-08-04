@@ -1,6 +1,12 @@
 var geocoder;
 var map;
 function initialize() {
+  /*Autocomplete address*/
+  var input = document.getElementById('indirizzo');
+  var options = {};
+    
+  new google.maps.places.Autocomplete(input, options);
+
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(41.902783, 12.496366);
   var mapOptions = {
@@ -18,8 +24,6 @@ function initialize() {
     draggable: true,
     map: map
   });
-
-
 
 }
 
@@ -61,4 +65,3 @@ function initializeListAddress(address) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-

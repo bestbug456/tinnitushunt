@@ -4,7 +4,9 @@ if (is_ajax()) {
     $action = $_POST["action"];
     switch($action) { //Switch case for value of action
       case "insert": addNewAcufene(); break;
-      case "socialLogin": sLogin(); break;
+      case "getData": getInfoForm(); break;
+      case "getTotal": getTotal();break;
+      case "getListOfZips": getZips();break;
     }
   }
 }
@@ -15,64 +17,68 @@ function is_ajax() {
 }
 
 function addNewAcufene(){
-
-  $adress =  $_POST['address'];
-
-  $filename = "savedArray.txt";
-  $contents = file_get_contents($filename);
-  if($contents != ""){
-    $listAddress = unserialize($contents);
-  }else{
-    $listAddress = array();
+  include_once dirname(__FILE__).'/database/handlerDb.php';
+  if(addData(array($_POST['id'],$_POST['cap'],$_POST['senti'],$_POST['inizio'],$_POST['patologie'],$_POST['suoni'],$_POST['andamento'],$_POST['notare'],$_POST['storia'],$_POST['miglioramento'],$_POST['sesso'],$_POST['nascita'],$_POST['email'],$_POST['indirizzo'])))
+    $return["status"] = "ok";
+  else{
+    $return["status"] = "error";
+    $return['errorInfo'] = $GLOBALS['errorSql'];
   }
 
-  if($listAddress[hash("sha256",$adress)] != NULL)
-    $listAddress[hash("sha256",$adress)]++; 
-  else
-    $listAddress[hash("sha256",$adress)]=1;
-
-  file_put_contents($filename, serialize($listAddress));
-
-
-
-  $return["status"] = "ok";
-  $return["address_count"] = $listAddress[hash("sha256",$adress)];
-  
-  //Do what you need to do with the info. The following are some examples.
-  //if ($return["favorite_beverage"] == ""){
-  //  $return["favorite_beverage"] = "Coke";
-  //}
-  //$return["favorite_restaurant"] = "McDonald's";
-  
   $return["json"] = json_encode($return);
   echo json_encode($return);
 }
 
 
-function sLogin(){
-  $social = $_POST['social'];
-  try{
-    /*$config_file_path = dirname(__FILE__).'/hybridauth/config.php';  
-    require_once(dirname(__FILE__).'/hybridauth/Hybrid/Auth.php');
-
-    $hybridauth = new Hybrid_Auth( $config_file_path );
-
-    $adapter = $hybridauth->authenticate($social);
-    $user_profile = $adapter->getUserProfile();*/
-
-    header("Location: login-twitter.php");
-    
+function getInfoForm(){
+  include_once dirname(__FILE__).'/database/handlerDb.php';
+  $id = $_POST['id'];
+  
+  $info = getData($id);
+  if($GLOBALS['dataUser'] == NULL & $info == true){
     $return["status"] = "ok";
-    $return["socialInfo"] = serialize($user_profile);
-
-    $return["json"] = json_encode($return);
-    echo json_encode($return);
-  }catch(Exception $e){
+    $return['info'] = "NOT_EXIST";
+  }elseif($info == false){
     $return["status"] = "error";
-    $return["errorInfo"] = serialize($e);
-
-    $return["json"] = json_encode($return);
-    echo json_encode($return);
+    $return['errorInfo'] = $GLOBALS['errorSql'];
+  }else{
+    $return['status'] = "ok";
+    $return['dataUser'] = $GLOBALS['dataUser'];
   }
+
+  $return["json"] = json_encode($return);
+  echo json_encode($return);
+}
+
+function getTotal(){
+  include_once dirname(__FILE__).'/database/handlerDb.php';
+  $info = getTotalFromDb();
+  
+  if(!$info){
+    $return["status"] = "error";
+    $return['errorInfo'] = $GLOBALS['errorSql'];
+  }else{
+    $return['status'] = "ok";
+    $return['dataUser'] = $info;
+  }
+
+  $return["json"] = json_encode($return);
+  echo json_encode($return);
+}
+
+function getZips(){
+  include_once dirname(__FILE__).'/database/handlerDb.php';
+  $info = getListZips();
+  
+  if(!$info){
+    $return["status"] = "error";
+    $return['errorInfo'] = $GLOBALS['errorSql'];
+  }else{
+    $return['status'] = "ok";
+    $return['dataUser'] = $info;
+  }
+
+  $return["json"] = json_encode($return);
+  echo json_encode($return);
 }
 ?>
