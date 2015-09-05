@@ -1,5 +1,4 @@
 function sendDataForm(id,name){
-    var cap = document.getElementById('cap').value;
     var senti = getSelectedText('sentiAcufene'); 
     var inizio = '';
     inizio = document.getElementById('inizioAcufene').value;
@@ -20,7 +19,6 @@ function sendDataForm(id,name){
       url: "http://bbug.me/works/acufene/handler.php",
       data: {"action": "insert",
               "id": id,
-              "cap": cap,
               "senti": senti,
               "inizio": inizio,
               "patologie": patologie,
@@ -81,7 +79,6 @@ function getDataForm(id){
       success: function(data) {
         var userData = JSON.parse(data["json"]);
         var formData = userData.dataUser;
-        document.getElementById('cap').value = formData.cap;
         setSelectedText('sentiAcufene',formData.senti); 
         document.getElementById('inizioAcufene').value = formData.inizio;
         setSelectedText('patologie',formData.patologie);

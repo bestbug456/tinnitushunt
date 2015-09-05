@@ -45,8 +45,18 @@ padding-top: 5px;
 	overflow: scroll;
 }
 
+.margin-modal-text{
+  margin-bottom: 25px;
+}
 
+.avvisi{
+  font-size: 0.9em;
+  color: #bdc3c7;
+}
 
+.input-text-width{
+  width: 100%;
+}
 
 /* Fix Bootstrap .modal compatibility with jQuery UI Autocomplete,
 see http://stackoverflow.com/questions/10957781/google-maps-autocomplete-result-in-bootstrap-modal-dialog */

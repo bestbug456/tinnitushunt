@@ -28,6 +28,7 @@
     <script src="js/pageEditor.js"></script>  
     <script src="js/formData.js"></script>
     <script type="text/javascript" src="js/placeSearchBox"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js" type="text/javascript"></script>
 
     <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -50,25 +51,26 @@
         <div class="modal-body">
                 
                 <p>Dove senti il tuo acufene?</p>
-                <select class="form-control" id="sentiAcufene">
+                <select class="form-control margin-modal-text" id="sentiAcufene">
                   <option value="0">Seleziona un valore</option>
                   <option value="1">In entrambe le orecchie</option>
                   <option value="2">Solo nell'orecchio sinistro</option>
                   <option value="3">Solo nell'orecchio destro</option>
                 </select>
-                <br>
+                
                 <p>Quando è iniziato il tuo acufene?</p>
-                <input id="inizioAcufene" type="text" placeholder="Mese/Anno">
+                <input class="margin-modal-text input-text-width" id="inizioAcufene" type="text" placeholder="Mese/Anno">
+
                 <p>Hai patologie dell'udito?</p>
-                <select class="form-control" id="patologie">
+                <select class="form-control margin-modal-text" id="patologie">
                   <option value="0">Seleziona risposta</option>
                   <option value="1">No</option>
                   <option value="2">Si, Ipoacusia</option>
                   <option value="3">Si, Iperacusia</option>
                 </select>
-                <br>
+                
                 <p>Qual'è il suono che descrive meglio il tuo acufene?</p>
-                <select class="form-control" id="suoni">
+                <select class="form-control margin-modal-text" id="suoni">
                   <option value="0">Seleziona risposta</option>
                   <option value="1">Ronzio</option>
                   <option value="2">Fischio</option>
@@ -78,43 +80,45 @@
                   <option value="6">Cascata</option>
                   <option value="7">Rumore bianco</option>
                 </select>
-                <br>
+                
                 <p>Quale frase descrive meglio l'andamento del tuo acufene?</p>
-                <select class="form-control" id="andamento">
+                <select class="form-control margin-modal-text" id="andamento">
                   <option value="0">Seleziona risposta</option>
                   <option value="1">Rimane sempre fisso</option>
                   <option value="2">Varia leggermente in base al periodo</option>
                   <option value="3">Cambia di giorno in giorno</option>
                   <option value="4">Fluttua spesso durante la giornata</option>
                 </select>
-                <br>
+                
                 <p>Quando fai caso al tuo acufene?</p>
-                <select class="form-control" id="notare">
+                <select class="form-control margin-modal-text" id="notare">
                   <option value="0">Seleziona risposta</option>
                   <option value="1">Solo quando c'è silenzio assoluto</option>
                   <option value="2">Anche quando c'è un po' di brusio attorno a me</option>
                   <option value="3">Anche quando parlo con le persone o guardo la televisione</option>
                   <option value="4">Anche in ambienti molto rumorosi</option>
                 </select>
-                <br>
+                
                 <p>Questo spazio è dedicato a raccontare la tua storia di acufeni:</p>
-                <textarea id="storia" rows="5" cols="28"></textarea>
+                <textarea class="margin-modal-text input-text-width" id="storia" rows="5" cols="28"></textarea>
+                
                 <p>Cosa ti aiuta maggiormente a migliorare l’acufene?</p>
-                <textarea id="miglioramento" rows="5" cols="28"></textarea>
+                <textarea class="margin-modal-text input-text-width" id="miglioramento" rows="5" cols="28"></textarea>
+                
                 <p>Genere</p>
-                <select class="form-control" id="sesso">
+                <select class="form-control margin-modal-text" id="sesso">
                   <option value="0">Seleziona un valore</option>
                   <option value="1">Maschio</option>
                   <option value="2">Femmina</option>                  
                 </select>
                 <p>Anno di nascita</p>
-                <input type="text" id="anno">
+                <input class="margin-modal-text input-text-width" type="text" id="anno">
                 <p>Indirizzo E-mail</p>
-                <input type="text" id="email">
-                <p>Cap</p>
-                <input type="text" id="cap">
-                <p>Via</p>
-                <input type="text" id="indirizzo">
+                <input class="margin-modal-text input-text-width" type="text" id="email">
+                <p>Indirizzo (via, piazza) <span class="avvisi">Verrà visualizzato sulla mappa senza associazione con i tuoi dati personali</span></p>
+                <input class="margin-modal-text input-text-width" type="text" id="indirizzo">
+                <input type="checkbox"> autorizzo al trattamento dei miei dati personali </input><br>
+                <input type="checkbox"> Lascio la mia disponibilità per essere contattato da istituti di ricerca che collaborano con tinnitushunt per essere informato sulla partecipazione a ricerche sull'acufene (facoltativo) </input>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>

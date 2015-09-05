@@ -10,7 +10,7 @@ function initialize() {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(41.902783, 12.496366);
   var mapOptions = {
-    zoom: 8,
+    zoom: 1,
     center: latlng
   }
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -49,7 +49,7 @@ function codeAddress() {
 }
 
 function initializeListAddress(address) {
-  
+    
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
@@ -62,6 +62,10 @@ function initializeListAddress(address) {
     }
   });
 
+    
+    
 }
+
+
 
 google.maps.event.addDomListener(window, 'load', initialize);

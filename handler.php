@@ -18,7 +18,7 @@ function is_ajax() {
 
 function addNewAcufene(){
   include_once dirname(__FILE__).'/database/handlerDb.php';
-  if(addData(array($_POST['id'],$_POST['cap'],$_POST['senti'],$_POST['inizio'],$_POST['patologie'],$_POST['suoni'],$_POST['andamento'],$_POST['notare'],$_POST['storia'],$_POST['miglioramento'],$_POST['sesso'],$_POST['nascita'],$_POST['email'],$_POST['indirizzo'])))
+  if(addData(array($_POST['id'],$_POST['senti'],$_POST['inizio'],$_POST['patologie'],$_POST['suoni'],$_POST['andamento'],$_POST['notare'],$_POST['storia'],$_POST['miglioramento'],$_POST['sesso'],$_POST['nascita'],$_POST['email'],$_POST['indirizzo'])))
     $return["status"] = "ok";
   else{
     $return["status"] = "error";

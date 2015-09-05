@@ -52,10 +52,24 @@ function listOfZips(){
       data: {"action": "getListOfZips"},
       success: function(data) {
       	var address = data['dataUser'];
+	      	var markers = [];
+	      	var latng = [];
+	      	for(i=0;i<address.length;i++){
+	      		latng = JSON.parse(address[i]);
+	      		var latLng = new google.maps.LatLng(
+	                            latng.results[0].geometry.northeast.lat,
+	                            latng.results[0].geometry.northeast.lng);
+		        var marker = new google.maps.Marker({
+		            position: latLng,
+		            map: map
+		        });
+		        markers.push(marker);
+	      	}
+	      	//var markerCluster = new MarkerClusterer(map, markers);
+      	
+        
 
-      	for (var i = 0; i < address.length; i++) {
-        	initializeListAddress(address[i].indirizzo);
-    	}
+
       },
       error: function(xhr,e){
             if(xhr.status==0){
