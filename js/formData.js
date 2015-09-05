@@ -16,7 +16,7 @@ function sendDataForm(id,name){
     $.ajax({
       type: "POST",
       dataType: "json",
-      url: "http://bbug.me/works/acufene/handler.php",
+      url: "http://tinnitushunt.com/handler.php",
       data: {"action": "insert",
               "id": id,
               "senti": senti,
@@ -73,7 +73,7 @@ function getDataForm(id){
     $.ajax({
       type: "POST",
       dataType: "json",
-      url: "http://bbug.me/works/acufene/handler.php",
+      url: "http://tinnitushunt.com/handler.php",
       data: {"action": "getData",
               "id": id},
       success: function(data) {
