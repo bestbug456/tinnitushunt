@@ -5,12 +5,12 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <meta property="og:title" content="Registro degli acufeni" />
-    <meta property="og:url" content="http://bbug.me/works/acufene" />
+    <meta property="og:title" content="La mappa degli acufenizzati, registrati e fai vedere quanti siamo!" />
+    <meta property="og:url" content="http://tinnitushunt.com" />
     <meta property="og:description" content="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" />
     <meta property="og:site_name" content="TinnitusHunt" />
-    <title>tinnitushunt</title>
-
+    <title>Tinnitus Hunt - La mappa di chi soffre di acufeni</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!--Some usefull link (style js etc) -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -22,23 +22,52 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
     <script src="js/geocoder.js"></script>
-    <script defer src="js/socialLogin.js"></script>  
-    <script src="js/facebookSdk.js"></script>  
-    <script src="js/facebookLogin.js"></script>  
-    <script src="js/pageEditor.js"></script>  
+    <script defer src="js/socialLogin.js"></script>
+    <script src="js/facebookSdk.js"></script>
+    <script src="js/facebookLogin.js"></script>
+    <script src="js/pageEditor.js"></script>
     <script src="js/formData.js"></script>
     <script type="text/javascript" src="js/placeSearchBox"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js" type="text/javascript"></script>
 
+  <!-- ShareThis Code for tinnitushunt.com -->
     <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
   <script type="text/javascript" src="js/shareThis.js"></script>
+
+  <!-- Sumome Tracking Code for tinnitushunt.com Sharing and Analytics-->
+    <script src="//load.sumome.com/" data-sumo-site-id="2125ad796ddf8c6638f057b1355ad6cc98560b2307a1ba867717e73e77fb21a5" async="async"></script>
+
+  <!-- Hotjar Tracking Code for tinnitushunt.com -->
+  <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:73953,hjsv:5};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <!-- GoogleAnlytics Tracking Code for tinnitushunt.com -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-67447953-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
   </head>
   <body>
 
   <div id='panel' class="row text-center">
-        <p id="textMenu">Registro degli acufeni <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Registrati</a></p>
+        <p id="textMenu"><img src"img/TinnitusHuntLogo.png" />La mappa degli acufenizzati, soffri di acufeni? <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Registrati</a></p>
   </div>
   <div class="modal fade" id="userProfile" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
     <div class="modal-dialog">
@@ -46,10 +75,10 @@
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title" id="myName"></h4><br>
-            <p id="welcomeText">Raccontaci del tuo acufene compilando il questionario. I tuoi dati non verranno mai condivisi pubblicamente se non in forma anonima ed aggregata. E comunque col tuo consenso</p>
+            <p id="welcomeText">Raccontaci del tuo acufene compilando il questionario. I tuoi dati non verranno mai condivisi pubblicamente se non in forma anonima ed aggregata. Con la registrazione autorizzi al trattamento dei tuoi dati personali secondo la normativa vigente.</p>
         </div>
         <div class="modal-body">
-                
+
                 <p>Dove senti il tuo acufene?</p>
                 <select class="form-control margin-modal-text" id="sentiAcufene">
                   <option value="0">Seleziona un valore</option>
@@ -57,7 +86,7 @@
                   <option value="2">Solo nell'orecchio sinistro</option>
                   <option value="3">Solo nell'orecchio destro</option>
                 </select>
-                
+
                 <p>Quando è iniziato il tuo acufene?</p>
                 <input class="margin-modal-text input-text-width" id="inizioAcufene" type="text" placeholder="Mese/Anno">
 
@@ -68,19 +97,19 @@
                   <option value="2">Si, Ipoacusia</option>
                   <option value="3">Si, Iperacusia</option>
                 </select>
-                
+
                 <p>Qual'è il suono che descrive meglio il tuo acufene?</p>
                 <select class="form-control margin-modal-text" id="suoni">
                   <option value="0">Seleziona risposta</option>
-                  <option value="1">Ronzio</option>
-                  <option value="2">Fischio</option>
-                  <option value="3">Fruscio</option>
+                  <option value="1">Fischio</option>
+                  <option value="2">Fruscio</option>
+                  <option value="3">Cascata</option>
                   <option value="4">Pulsazione</option>
-                  <option value="5">battito</option>
-                  <option value="6">Cascata</option>
+                  <option value="5">Ronzio</option>
+                  <option value="6">Battito</option>
                   <option value="7">Rumore bianco</option>
                 </select>
-                
+
                 <p>Quale frase descrive meglio l'andamento del tuo acufene?</p>
                 <select class="form-control margin-modal-text" id="andamento">
                   <option value="0">Seleziona risposta</option>
@@ -89,7 +118,7 @@
                   <option value="3">Cambia di giorno in giorno</option>
                   <option value="4">Fluttua spesso durante la giornata</option>
                 </select>
-                
+
                 <p>Quando fai caso al tuo acufene?</p>
                 <select class="form-control margin-modal-text" id="notare">
                   <option value="0">Seleziona risposta</option>
@@ -98,18 +127,18 @@
                   <option value="3">Anche quando parlo con le persone o guardo la televisione</option>
                   <option value="4">Anche in ambienti molto rumorosi</option>
                 </select>
-                
+
                 <p>Questo spazio è dedicato a raccontare la tua storia di acufeni:</p>
                 <textarea class="margin-modal-text input-text-width" id="storia" rows="5" cols="28"></textarea>
-                
+
                 <p>Cosa ti aiuta maggiormente a migliorare l’acufene?</p>
                 <textarea class="margin-modal-text input-text-width" id="miglioramento" rows="5" cols="28"></textarea>
-                
+
                 <p>Genere</p>
                 <select class="form-control margin-modal-text" id="sesso">
                   <option value="0">Seleziona un valore</option>
                   <option value="1">Maschio</option>
-                  <option value="2">Femmina</option>                  
+                  <option value="2">Femmina</option>
                 </select>
                 <p>Anno di nascita</p>
                 <input class="margin-modal-text input-text-width" type="text" id="anno">
@@ -117,8 +146,7 @@
                 <input class="margin-modal-text input-text-width" type="text" id="email">
                 <p>Indirizzo (via, piazza) <span class="avvisi">Verrà visualizzato sulla mappa senza associazione con i tuoi dati personali</span></p>
                 <input class="margin-modal-text input-text-width" type="text" id="indirizzo">
-                <input type="checkbox"> autorizzo al trattamento dei miei dati personali </input><br>
-                <input type="checkbox"> Lascio la mia disponibilità per essere contattato da istituti di ricerca che collaborano con tinnitushunt per essere informato sulla partecipazione a ricerche sull'acufene (facoltativo) </input>
+                <input type="checkbox"> Lascio la mia disponibilità per essere contattato da istituti di ricerca che collaborano con TinnitusHunt.com per essere informato sulla partecipazione a ricerche sull'acufene. (facoltativo) </input>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
@@ -140,7 +168,7 @@
           <p>Condividi su:</p>
           <div class="socialShareModal">
             <span class="st_facebook_large"></span>
-            <span class="st_twitter_large" st_title="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" st_via="TinnitusHunt" st_url="http://bbug.me/works/acufene"></span>
+            <span class="st_twitter_large" st_title="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" st_via="TinnitusHunt" st_url="http://tinnitushunt.com"></span>
             <span class="st_linkedin_large"></span>
             <span class="st_googleplus_large"></span>
             <span class="st_email_large"></span>
@@ -167,7 +195,7 @@
 <br>
 L’acufene, o tinnito, è un disturbo uditivo caratterizzato dalla percezione di rumori in assenza di sorgenti sonore esterne. Questo comporta la soggettiva assenza di silenzio, in quanto vengono costantemente percepiti suoni all’interno dell’orecchio.
           </p>
-          <fb:login-button scope="public_profile,email" onlogin="checkLoginState()"> Soffro di acufene e<br> voglio registrarmi tramite facebook
+          <fb:login-button scope="public_profile,email" onlogin="checkLoginState()"> Soffro di acufeni, registrarmi con Facebook
           </fb:login-button>
           <a href="#" class="btn btn-lg btn-success" onclick="noAcufene()">Non soffro di acufene</a>
         </div>
@@ -182,7 +210,7 @@ L’acufene, o tinnito, è un disturbo uditivo caratterizzato dalla percezione d
       <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Non soffro di acufene</h4>
+            <h4 class="modal-title" id="myModalLabel">Non soffro di acufeni</h4>
         </div>
         <div class="modal-body">
           <p>Il 10% circa della popolazione mondiale soffre di acufeni nonostante la maggior parte non ne parli per paura di non essere compreso. A livello mondiale non è ancora stata trovata una cura per questo fastidioso disturbo che spesso compromette significativamente la vita delle persone che ne soffrono portando vissuti di ansa, paura e nei casi più gravi al suicidio. <br>
@@ -193,14 +221,14 @@ Chiedi a 5 persone se quando c’è silenzo, ad esempio prima di addormentarsi, 
           <p>Condividi sui social network ed aiutaci a diffondere queste informazioni</p>
           <div class="socialShareModal">
             <span class="st_facebook_large"></span>
-            <span class="st_twitter_large" st_title="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" st_via="TinnitusHunt" st_url="http://bbug.me/works/acufene"></span>
+            <span class="st_twitter_large" st_title="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" st_via="TinnitusHunt" st_url="http://tinnitushunt.com"></span>
             <span class="st_linkedin_large"></span>
             <span class="st_googleplus_large"></span>
             <span class="st_email_large"></span>
           </div>
 
           <div id="mc_embed_signup">
-              <form action="//kebabnow.us11.list-manage.com/subscribe/post?u=8239053e3b2a0a6788384c3ee&amp;id=4e0e64c87a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <form action="//tinnitushunt.us11.list-manage.com/subscribe/post?u=5ea1aa0a4d937518b7ec2004f&amp;id=b6d10c7f9d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                   <div id="mc_embed_signup_scroll">
                 <h2>Voglio rimanere informato e ricevere la newsletter</h2>
               <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
@@ -237,4 +265,3 @@ Chiedi a 5 persone se quando c’è silenzo, ad esempio prima di addormentarsi, 
     <div id="acufenizzati"></div>
   </body>
 </html>
-
