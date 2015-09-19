@@ -33,7 +33,7 @@ function addNewAcufene(){
 function getInfoForm(){
   include_once dirname(__FILE__).'/database/handlerDb.php';
   $id = $_POST['id'];
-  
+
   $info = getData($id);
   if($GLOBALS['dataUser'] == NULL & $info == true){
     $return["status"] = "ok";
@@ -53,7 +53,7 @@ function getInfoForm(){
 function getTotal(){
   include_once dirname(__FILE__).'/database/handlerDb.php';
   $info = getTotalFromDb();
-  
+
   if(!$info){
     $return["status"] = "error";
     $return['errorInfo'] = $GLOBALS['errorSql'];
@@ -69,7 +69,7 @@ function getTotal(){
 function getZips(){
   include_once dirname(__FILE__).'/database/handlerDb.php';
   $info = getListZips();
-  
+
   if(!$info){
     $return["status"] = "error";
     $return['errorInfo'] = $GLOBALS['errorSql'];
