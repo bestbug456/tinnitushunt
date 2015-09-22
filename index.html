@@ -67,7 +67,7 @@
   <body>
 
   <div id='panel' class="row text-center">
-        <img src"img\TinnitusHuntLogo.png" /><p id="textMenu">La mappa degli acufenizzati, soffri di acufeni? <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Registrati</a></p>
+        <p id="textMenu"><img src"img\TinnitusHuntLogo.png" />La mappa degli acufenizzati, soffri di acufeni? <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Registrati</a></p>
   </div>
   <div class="modal fade" id="userProfile" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
     <div class="modal-dialog">
@@ -196,7 +196,7 @@
 <br>
 L’acufene, o tinnito, è un disturbo uditivo caratterizzato dalla percezione di rumori in assenza di sorgenti sonore esterne. <br> Questo comporta la soggettiva assenza di silenzio, in quanto vengono costantemente percepiti suoni all’interno dell’orecchio.
           </p>
-          <fb:login-button scope="public_profile,email" onlogin="checkLoginState()"> Soffro di acufeni, registrarmi con Facebook
+          <fb:login-button scope="public_profile,email" data-size="xlarge" onlogin="checkLoginState()"> Soffro di acufeni, registrarmi con Facebook
           </fb:login-button>
           <a href="#" class="btn btn-lg btn-success" onclick="noAcufene()">Non soffro di acufene</a>
         </div>

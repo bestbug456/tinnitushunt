@@ -66,8 +66,8 @@ function listOfZips(){
 		        markers.push(marker);
 	      	}
 	      	//var markerCluster = new MarkerClusterer(map, markers);
-      	
-        
+
+
 
 
       },

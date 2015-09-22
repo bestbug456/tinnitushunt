@@ -4,7 +4,7 @@ function initialize() {
   /*Autocomplete address*/
   var input = document.getElementById('indirizzo');
   var options = {};
-    
+
   new google.maps.places.Autocomplete(input, options);
 
   geocoder = new google.maps.Geocoder();
@@ -49,7 +49,7 @@ function codeAddress() {
 }
 
 function initializeListAddress(address) {
-    
+
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
@@ -62,8 +62,8 @@ function initializeListAddress(address) {
     }
   });
 
-    
-    
+
+
 }
 
 

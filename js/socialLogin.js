@@ -9,7 +9,7 @@ function verifyLogin(){
           		$('#userProfile').modal();
 	          	document.getElementById('openModal').innerHTML = "Profilo";
 			});
-    		
+
 		}else{
 			$('#socialLogin').modal();
 			document.getElementById('openModal').innerHTML = "Registrati";
