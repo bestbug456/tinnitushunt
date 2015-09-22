@@ -1,5 +1,5 @@
 function sendDataForm(id,name){
-    var senti = getSelectedText('sentiAcufene'); 
+    var senti = getSelectedText('sentiAcufene');
     var inizio = '';
     inizio = document.getElementById('inizioAcufene').value;
     var patologie = getSelectedText('patologie');
@@ -35,7 +35,7 @@ function sendDataForm(id,name){
       success: function(data) {
         $('#CloseForm').click();
         $('#Thanks').modal();
-        document.getElementById('thanksMessage').innerHTML = "Grazie mille "+name+" per aver inserito i tuoi dati. Il tuo contributo è prezioso aiutaci a diffondere la voce e a sensibilizzare sul nostro male.";
+        document.getElementById('thanksMessage').innerHTML = "Grazie mille "+name+" per aver inserito i tuoi dati. Il tuo contributo è prezioso aiutaci a diffondere la voce e a sensibilizzare il mondo sul nostro male.";
       },
       error: function(xhr,e){
             if(xhr.status==0){
@@ -69,7 +69,7 @@ function getPersonalData(){
       });
 }
 
-function getDataForm(id){ 
+function getDataForm(id){
     $.ajax({
       type: "POST",
       dataType: "json",
@@ -79,7 +79,7 @@ function getDataForm(id){
       success: function(data) {
         var userData = JSON.parse(data["json"]);
         var formData = userData.dataUser;
-        setSelectedText('sentiAcufene',formData.senti); 
+        setSelectedText('sentiAcufene',formData.senti);
         document.getElementById('inizioAcufene').value = formData.inizio;
         setSelectedText('patologie',formData.patologie);
         setSelectedText('suoni',formData.suoni);

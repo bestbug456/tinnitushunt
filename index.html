@@ -67,7 +67,7 @@
   <body>
 
   <div id='panel' class="row text-center">
-        <p id="textMenu"><img src"img/TinnitusHuntLogo.png" />La mappa degli acufenizzati, soffri di acufeni? <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Registrati</a></p>
+        <img src"img\TinnitusHuntLogo.png" /><p id="textMenu">La mappa degli acufenizzati, soffri di acufeni? <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Registrati</a></p>
   </div>
   <div class="modal fade" id="userProfile" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
     <div class="modal-dialog">
@@ -81,14 +81,14 @@
 
                 <p>Dove senti il tuo acufene?</p>
                 <select class="form-control margin-modal-text" id="sentiAcufene">
-                  <option value="0">Seleziona un valore</option>
+                  <option value="0">Seleziona una risposta</option>
                   <option value="1">In entrambe le orecchie</option>
                   <option value="2">Solo nell'orecchio sinistro</option>
                   <option value="3">Solo nell'orecchio destro</option>
                 </select>
 
                 <p>Quando è iniziato il tuo acufene?</p>
-                <input class="margin-modal-text input-text-width" id="inizioAcufene" type="text" placeholder="Mese/Anno">
+                <input class="margin-modal-text input-text-width" id="inizioAcufene" type="month" placeholder="Mese/Anno">
 
                 <p>Hai patologie dell'udito?</p>
                 <select class="form-control margin-modal-text" id="patologie">
@@ -100,7 +100,7 @@
 
                 <p>Qual'è il suono che descrive meglio il tuo acufene?</p>
                 <select class="form-control margin-modal-text" id="suoni">
-                  <option value="0">Seleziona risposta</option>
+                  <option value="0">Seleziona una risposta</option>
                   <option value="1">Fischio</option>
                   <option value="2">Fruscio</option>
                   <option value="3">Cascata</option>
@@ -112,7 +112,7 @@
 
                 <p>Quale frase descrive meglio l'andamento del tuo acufene?</p>
                 <select class="form-control margin-modal-text" id="andamento">
-                  <option value="0">Seleziona risposta</option>
+                  <option value="0">Seleziona una risposta</option>
                   <option value="1">Rimane sempre fisso</option>
                   <option value="2">Varia leggermente in base al periodo</option>
                   <option value="3">Cambia di giorno in giorno</option>
@@ -121,7 +121,7 @@
 
                 <p>Quando fai caso al tuo acufene?</p>
                 <select class="form-control margin-modal-text" id="notare">
-                  <option value="0">Seleziona risposta</option>
+                  <option value="0">Seleziona una risposta</option>
                   <option value="1">Solo quando c'è silenzio assoluto</option>
                   <option value="2">Anche quando c'è un po' di brusio attorno a me</option>
                   <option value="3">Anche quando parlo con le persone o guardo la televisione</option>
@@ -136,14 +136,15 @@
 
                 <p>Genere</p>
                 <select class="form-control margin-modal-text" id="sesso">
-                  <option value="0">Seleziona un valore</option>
+                  <option value="0">Seleziona una risposta</option>
                   <option value="1">Maschio</option>
                   <option value="2">Femmina</option>
+                  <option value="3">Altro</option>
                 </select>
                 <p>Anno di nascita</p>
-                <input class="margin-modal-text input-text-width" type="text" id="anno">
+                <input class="margin-modal-text input-text-width" type="number" min="1915" max="2015" id="anno">
                 <p>Indirizzo E-mail</p>
-                <input class="margin-modal-text input-text-width" type="text" id="email">
+                <input class="margin-modal-text input-text-width" type="email" id="email">
                 <p>Indirizzo (via, piazza) <span class="avvisi">Verrà visualizzato sulla mappa senza associazione con i tuoi dati personali</span></p>
                 <input class="margin-modal-text input-text-width" type="text" id="indirizzo">
                 <input type="checkbox"> Lascio la mia disponibilità per essere contattato da istituti di ricerca che collaborano con TinnitusHunt.com per essere informato sulla partecipazione a ricerche sull'acufene. (facoltativo) </input>
@@ -165,7 +166,7 @@
         </div>
         <div class="modal-body">
           <p id="thanksMessage"></p>
-          <p>Condividi su:</p>
+          <p>Condividi sui social cliccando sui pulsanti sottostanti:</p>
           <div class="socialShareModal">
             <span class="st_facebook_large"></span>
             <span class="st_twitter_large" st_title="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" st_via="TinnitusHunt" st_url="http://tinnitushunt.com"></span>
@@ -189,11 +190,11 @@
             <h4 class="modal-title" id="myModalLabel">Missione</h4>
         </div>
         <div class="modal-body">
-          <p>Con TinnitusHunt vogliamo censire le persone con problemi di acufene con un duplice obiettivo:<br>
-- sensibilizzare la comunità sull’incidenza di questo disturbo tramite la visualizzazione di dati anonimi<br>
-- creare un registro a cui iscriversi per partecipare a ricerche sugli acufeni<br>
+          <p>TinnitusHunt propone di censire le persone con problemi di acufene ed ha un duplice obiettivo:<br>
+- Sensibilizzare sull’incidenza di questo disturbo tramite la mappa degli acufenizzati.<br>
+- Creare un registro a cui iscriversi per partecipare a ricerche sugli acufeni.<br>
 <br>
-L’acufene, o tinnito, è un disturbo uditivo caratterizzato dalla percezione di rumori in assenza di sorgenti sonore esterne. Questo comporta la soggettiva assenza di silenzio, in quanto vengono costantemente percepiti suoni all’interno dell’orecchio.
+L’acufene, o tinnito, è un disturbo uditivo caratterizzato dalla percezione di rumori in assenza di sorgenti sonore esterne. <br> Questo comporta la soggettiva assenza di silenzio, in quanto vengono costantemente percepiti suoni all’interno dell’orecchio.
           </p>
           <fb:login-button scope="public_profile,email" onlogin="checkLoginState()"> Soffro di acufeni, registrarmi con Facebook
           </fb:login-button>
@@ -213,12 +214,12 @@ L’acufene, o tinnito, è un disturbo uditivo caratterizzato dalla percezione d
             <h4 class="modal-title" id="myModalLabel">Non soffro di acufeni</h4>
         </div>
         <div class="modal-body">
-          <p>Il 10% circa della popolazione mondiale soffre di acufeni nonostante la maggior parte non ne parli per paura di non essere compreso. A livello mondiale non è ancora stata trovata una cura per questo fastidioso disturbo che spesso compromette significativamente la vita delle persone che ne soffrono portando vissuti di ansa, paura e nei casi più gravi al suicidio. <br>
+          <p>Il 10% circa della popolazione mondiale soffre di acufeni, nonostante la maggior parte non ne parli per paura di non essere compreso. A livello mondiale non è ancora stata trovata una cura per questo fastidioso disturbo, che spesso compromette significativamente la vita delle persone sofferenti, portando vissuti di ansa, paura e nei casi più gravi persino al suicidio. <br>
           <br>
 Se vuoi aiutarci a creare più consapevolezza condividi questo sito con amici e familiari e fai un piccolo esperimento:</br>
-Chiedi a 5 persone se quando c’è silenzo, ad esempio prima di addormentarsi, sentono dei suoni nelle proprie orecchie non attribuibili all’esterno, è probabile che uno di loro ti risponda di si.
+<strong>Chiedi a 5 persone se quando c’è silenzo, ad esempio prima di addormentarsi, sentono dei suoni nelle proprie orecchie non attribuibili all’esterno. E' probabile che uno di loro ti risponda di si.</strong>
           </p>
-          <p>Condividi sui social network ed aiutaci a diffondere queste informazioni</p>
+          <p>Condividi sui social network ed aiutaci a diffondere queste informazioni, clicca sui pulsanti qui sotto:</p>
           <div class="socialShareModal">
             <span class="st_facebook_large"></span>
             <span class="st_twitter_large" st_title="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" st_via="TinnitusHunt" st_url="http://tinnitushunt.com"></span>
@@ -226,19 +227,20 @@ Chiedi a 5 persone se quando c’è silenzo, ad esempio prima di addormentarsi, 
             <span class="st_googleplus_large"></span>
             <span class="st_email_large"></span>
           </div>
-
+          <br>
+          <br>
           <div id="mc_embed_signup">
               <form action="//tinnitushunt.us11.list-manage.com/subscribe/post?u=5ea1aa0a4d937518b7ec2004f&amp;id=b6d10c7f9d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                   <div id="mc_embed_signup_scroll">
-                <h2>Voglio rimanere informato e ricevere la newsletter</h2>
+                <h2>Iscriviti alla newsletter per rimanere aggiornato sulle iniziative di TinnitusHunt</h2>
               <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
               <div class="mc-field-group">
-                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+                <label for="mce-EMAIL">Indirizzo e-mail  <span class="asterisk">*</span>
               </label>
                 <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
               </div>
               <div class="mc-field-group">
-                <label for="mce-NAME">Name </label>
+                <label for="mce-NAME">Nome e Cognome</label>
                 <input type="text" value="" name="NAME" class="" id="mce-NAME">
               </div>
                 <div id="mce-responses" class="clear">
@@ -246,7 +248,7 @@ Chiedi a 5 persone se quando c’è silenzo, ad esempio prima di addormentarsi, 
                   <div class="response" id="mce-success-response" style="display:none"></div>
                 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                   <div style="position: absolute; left: -5000px;"><input type="text" name="b_8239053e3b2a0a6788384c3ee_4e0e64c87a" tabindex="-1" value=""></div>
-                  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                  <div class="clear"><input type="submit" value="Iscriviti" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                   </div>
               </form>
           </div>
