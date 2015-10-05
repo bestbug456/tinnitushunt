@@ -10,20 +10,10 @@ function initialize() {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(41.902783, 12.496366);
   var mapOptions = {
-    zoom: 1,
+    zoom: 5,
     center: latlng
   }
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: map.getCenter(),
-    icon: {
-      path: google.maps.SymbolPath.CIRCLE,
-      scale: 1
-    },
-    draggable: true,
-    map: map
-  });
 
 }
 
