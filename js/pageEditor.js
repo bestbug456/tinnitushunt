@@ -21,7 +21,7 @@ function totAcufenizzati(){
 	  $.ajax({
       type: "POST",
       dataType: "json",
-      url: "http://bbug.me/works/acufene/handler.php",
+      url: "http://tinnitushunt.com/handler.php",
       data: {"action": "getTotal"},
       success: function(data) {
       	$("#acufenizzati").text(data.dataUser+" acufenizzati");
@@ -48,7 +48,7 @@ function listOfZips(){
 	  $.ajax({
       type: "POST",
       dataType: "json",
-      url: "http://bbug.me/works/acufene/handler.php",
+      url: "http://tinnitushunt.com/handler.php",
       data: {"action": "getListOfZips"},
       success: function(data) {
       	var address = data['dataUser'];
@@ -57,17 +57,23 @@ function listOfZips(){
 	      	for(i=0;i<address.length;i++){
 	      		latng = JSON.parse(address[i]);
 	      		var latLng = new google.maps.LatLng(
-	                            latng.results[0].geometry.northeast.lat,
-	                            latng.results[0].geometry.northeast.lng);
+	                            latng.results[0].geometry.location.lat,
+	                            latng.results[0].geometry.location.lng);
 		        var marker = new google.maps.Marker({
 		            position: latLng,
 		            map: map
 		        });
 		        markers.push(marker);
 	      	}
+<<<<<<< HEAD
 	      	//var markerCluster = new MarkerClusterer(map, markers);
 
 
+=======
+	      	var markerCluster = new MarkerClusterer(map, markers);
+      	
+        
+>>>>>>> bestbug456/master
 
 
       },

@@ -121,7 +121,9 @@ function getListOfZips($database){
 		$database->close();
 		$arrayResult = array();
 		while ($row = $result->fetch_assoc()){
-			$geocode=file_get_contents("https://maps.google.com/maps/api/geocode/json?address=".$row."&components=country:IT&sensor=true");
+			$row['indirizzo'] = urlencode($row['indirizzo']);
+			$url = "https://maps.google.com/maps/api/geocode/json?address=".$row['indirizzo']."&components=country:IT&sensor=true";
+			$geocode=file_get_contents($url);
 			$address= json_decode($geocode);
 
 			$lat = $address->results[0]->geometry->location->lat;

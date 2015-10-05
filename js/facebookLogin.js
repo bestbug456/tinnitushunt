@@ -35,10 +35,10 @@ function openFbPopUp() {
     {
       method: 'feed',
       name: 'Tinnitus Hunt',
-      link: 'bbug.me/works/acufene/',
+      link: 'tinnitushunt.com',
       picture: 'http://fbrell.com/f8.jpg',
       caption: '',
-      description: 'Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni? TinnitusHunt.com'
+      description: 'Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni? tinnitushunt.com'
     },
     function(response) {
       if (response && response.post_id) {
