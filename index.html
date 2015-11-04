@@ -33,7 +33,6 @@
   <!-- ShareThis Code for tinnitushunt.com -->
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript">var switchTo5x=true;</script>
-    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
     <script type="text/javascript" src="js/shareThis.js"></script>
 
@@ -63,10 +62,17 @@
 
   <script type="text/javascript">
   function login() {
-    if( navigator.userAgent.match('CriOS') )
+    if( navigator.userAgent.match('CriOS') ){
       window.open('https://www.facebook.com/dialog/oauth?client_id='+1841808729377706+'&redirect_uri='+ document.location.href +'&scope=email,public_profile', '', null);
+      document.getElementById('openModal').innerHTML = "Profilo";
+      $('#closeLogin').click();
+    }
     else
-        FB.login(null, {scope: 'email,public_profile'});
+      FB.login(function(response) {
+        document.getElementById('openModal').innerHTML = "Profilo";
+          $('#closeLogin').click();
+          $('#userProfile').modal();
+      }, {scope: 'email,public_profile'});
   }
 
   </script>
