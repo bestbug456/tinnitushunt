@@ -9,7 +9,7 @@
     <meta property="og:url" content="http://tinnitushunt.com" />
     <meta property="og:description" content="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" />
     <meta property="og:site_name" content="TinnitusHunt" />
-    <title>Tinnitus Hunt - La mappa di chi soffre di acufeni</title>
+    <title>Tinnitus Hunt - La mappa di chi soffre di acufeni per la ricerca.</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!--Some usefull link (style js etc) -->
@@ -19,8 +19,14 @@
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
-    <link href="css/main.css" rel="stylesheet">
+
+    <link href="css/normalize.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic' rel='stylesheet' type='text/css'>
+    
+ <!-- Mailchimp -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+      
     <script src="js/geocoder.js"></script>
     <script defer src="js/socialLogin.js"></script>
     <script src="js/facebookSdk.js"></script>
@@ -35,10 +41,7 @@
 <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
   <script type="text/javascript" src="js/shareThis.js"></script>
 
-  <!-- Sumome Tracking Code for tinnitushunt.com Sharing and Analytics-->
-    <script src="//load.sumome.com/" data-sumo-site-id="2125ad796ddf8c6638f057b1355ad6cc98560b2307a1ba867717e73e77fb21a5" async="async"></script>
-
-  <!-- Hotjar Tracking Code for tinnitushunt.com -->
+    <!-- Hotjar Tracking Code for tinnitushunt.com -->
   <script>
       (function(h,o,t,j,a,r){
           h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -66,7 +69,7 @@
   <body>
 
   <div id='panel' class="row text-center">
-        <p id="textMenu"><img src"img\TinnitusHuntLogo.png" />La mappa degli acufenizzati, soffri di acufeni? <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Registrati</a></p>
+        <p id="textMenu"><img src="img/TinnitusHuntLogo.png" style="width: 25px;"> La mappa degli acufenizzati, soffri di acufeni? Aiuta la ricerca! <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Registrati / Accedi</a></p>
   </div>
   <div class="modal fade" id="userProfile" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
     <div class="modal-dialog">
@@ -91,7 +94,7 @@
 
                 <p>Hai patologie dell'udito?</p>
                 <select class="form-control margin-modal-text" id="patologie">
-                  <option value="0">Seleziona risposta</option>
+                  <option value="0">Seleziona una risposta</option>
                   <option value="1">No</option>
                   <option value="2">Si, Ipoacusia</option>
                   <option value="3">Si, Iperacusia</option>
@@ -195,9 +198,9 @@
 <br>
 L’acufene, o tinnito, è un disturbo uditivo caratterizzato dalla percezione di rumori in assenza di sorgenti sonore esterne. <br> Questo comporta la soggettiva assenza di silenzio, in quanto vengono costantemente percepiti suoni all’interno dell’orecchio.
           </p>
-          <fb:login-button scope="public_profile,email" data-size="xlarge" onlogin="checkLoginState()"> Soffro di acufeni, registrarmi con Facebook
+          <fb:login-button scope="public_profile,email" data-size="xlarge" onlogin="checkLoginState()"> Soffro di acufeni, accedi con Facebook
           </fb:login-button>
-          <a href="#" class="btn btn-lg btn-success" onclick="noAcufene()">Non soffro di acufene</a>
+          <a href="#" class="btn btn-lg btn-success" onclick="noAcufene()">Non soffro di acufeni</a>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" id="closeLogin">Chiudi</button>
