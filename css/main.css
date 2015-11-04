@@ -1,3 +1,17 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-family: 'Lato', 'Aria', sans-serif;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+
 html, body, #map-canvas {
 height: 100%;
 margin: 0px;
@@ -25,14 +39,13 @@ padding-top: 5px;
 #mc_embed_signup{
 	background:#fff;
 	clear:left;
-	font:14px Helvetica,Arial,sans-serif;
+	font:14px;
 
 }
 #acufenizzati{
 	position: fixed;
     bottom: 35px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.42857143;
     color: #2B2B2B;
     margin-left: 45%;
@@ -71,3 +84,23 @@ see http://stackoverflow.com/questions/10957781/google-maps-autocomplete-result-
   	margin-left: 32%;
   }
 }
+
+
+/* Share personalized bar */
+
+#sthoverbuttons .sthoverbuttons-shade-l {
+    background:none !important;
+}
+
+#sthoverbuttons .sthoverbuttons-label {
+    color: #FFFFFF !important; 
+    
+}
+    
+#sthoverbuttons .sthoverbuttons-top-l {
+  background: none !important; 
+}
+
+#sthoverbuttons .sthoverbuttons-bottom-l {
+  background: none !important; 
+} 
