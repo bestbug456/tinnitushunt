@@ -1,36 +1,16 @@
 function sendDataForm(id,name){
-    var senti = getSelectedText('sentiAcufene');
-    var inizio = '';
-    inizio = document.getElementById('inizioAcufene').value;
-    var patologie = getSelectedText('patologie');
-    var suoni = getSelectedText('suoni');
-    var andamento = getSelectedText('andamento');
-    var notare = getSelectedText('notare');
-    var storia = document.getElementById('storia').value;
-    var miglioramento = document.getElementById('miglioramento').value;
-    var sesso = document.getElementById('sesso').value;
-    var nascita = document.getElementById('anno').value;
     var email = document.getElementById('email').value;
     var indirizzo = document.getElementById('indirizzo').value;
-
+    var contatto = document.getElementById('contatto').value;
     $.ajax({
       type: "POST",
       dataType: "json",
       url: "http://tinnitushunt.com/handler.php",
       data: {"action": "insert",
               "id": id,
-              "senti": senti,
-              "inizio": inizio,
-              "patologie": patologie,
-              "suoni":suoni,
-              "andamento": andamento,
-              "notare": notare,
-              "storia": storia,
-              "miglioramento": miglioramento,
-              "sesso": sesso,
-              "nascita": nascita,
               "email": email,
-              "indirizzo": indirizzo
+              "indirizzo": indirizzo,
+              "contatto": contatto
               },
       success: function(data) {
         $('#CloseForm').click();
@@ -79,18 +59,9 @@ function getDataForm(id){
       success: function(data) {
         var userData = JSON.parse(data["json"]);
         var formData = userData.dataUser;
-        setSelectedText('sentiAcufene',formData.senti);
-        document.getElementById('inizioAcufene').value = formData.inizio;
-        setSelectedText('patologie',formData.patologie);
-        setSelectedText('suoni',formData.suoni);
-        setSelectedText('andamento',formData.andamento);
-        setSelectedText('notare',formData.notare);
-        document.getElementById('storia').value = formData.storia;
-        document.getElementById('miglioramento').value = formData.miglioramento;
-        document.getElementById('sesso').value = formData.sesso;
-        document.getElementById('anno').value = formData.nascita;
         document.getElementById('email').value = formData.email;
         document.getElementById('indirizzo').value = formData.indirizzo;
+        document.getElementById('contatto').value = formData.contatto;
       },
       error: function(xhr,e){
             if(xhr.status==0){

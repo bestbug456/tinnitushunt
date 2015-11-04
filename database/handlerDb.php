@@ -66,9 +66,9 @@ function executeCommand($database,$action,$ArrayValue){
 }
 
 function insertDataToDb($database,$ArrayValue){
-	$query = "INSERT INTO answer (id, senti,inizio,patologie,suoni,andamento,notare,storia,miglioramento,sesso,nascita,email,indirizzo)
-			VALUES (".$ArrayValue[0].", ".$ArrayValue[1].", ".$ArrayValue[2].", '".$ArrayValue[3]."', ".$ArrayValue[4].", ".$ArrayValue[5].", ".$ArrayValue[6].", '".$ArrayValue[7]."', '".$ArrayValue[8]."', ".$ArrayValue[9].", ".$ArrayValue[10].", '".$ArrayValue[11]."', '".$ArrayValue[12]."')
-			ON DUPLICATE KEY UPDATE senti=".$ArrayValue[1].",inizio='".$ArrayValue[2]."',patologie=".$ArrayValue[3].",suoni=".$ArrayValue[4].",andamento=".$ArrayValue[5].",notare=".$ArrayValue[6].",storia='".$ArrayValue[7]."',miglioramento='".$ArrayValue[8]."',sesso=".$ArrayValue[9].",nascita=".$ArrayValue[10].",email='".$ArrayValue[11]."',indirizzo='".$ArrayValue[12]."'";
+	$query = "INSERT INTO profile (id,email,indirizzo,contatto)
+			VALUES (".$ArrayValue[0].", '".$ArrayValue[1]."', '".$ArrayValue[2]."', '".$ArrayValue[3]."')
+			ON DUPLICATE KEY UPDATE email='".$ArrayValue[1]."',indirizzo='".$ArrayValue[2]."',contatto='".$ArrayValue[3]."'";
 	$result = $database->query($query);
 	if(!$result){
 		$GLOBALS['errorSql'] = $database->error;
@@ -80,7 +80,7 @@ function insertDataToDb($database,$ArrayValue){
 }
 
 function getDataFromDb($database,$id){
-	$query = "SELECT * FROM answer WHERE id=".$id;
+	$query = "SELECT * FROM profile WHERE id=".$id;
 	$result = $database->query($query);
 
 	if(!$result){
@@ -97,7 +97,7 @@ function getDataFromDb($database,$id){
 }
 
 function getTotalTinnitus($database){
-	$query = "SELECT * FROM answer";
+	$query = "SELECT * FROM profile";
 	$result = $database->query($query);
 
 	if(!$result){
@@ -111,7 +111,7 @@ function getTotalTinnitus($database){
 }
 
 function getListOfZips($database){
-	$query = "SELECT DISTINCT indirizzo FROM answer";
+	$query = "SELECT DISTINCT indirizzo FROM profile";
 	$result = $database->query($query);
 	if(!$result){
 		$database->close();

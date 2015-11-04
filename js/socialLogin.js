@@ -23,7 +23,7 @@ function showForm() {
       		console.log('Successful login for: ' + response.name);
           	$('#closeLogin').click();
           	document.getElementById('myName').innerHTML =
-          	'Ciao ' + response.name;
+          	'Ciao ' + response.email;
           	getPersonalData();
           	$('#userProfile').modal();
           	document.getElementById('openModal').innerHTML = "Profilo";
