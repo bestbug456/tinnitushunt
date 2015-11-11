@@ -61,11 +61,13 @@ function getDataForm(id){
         var formData = userData.dataUser;        
         document.getElementById('email').value = formData.email;
         document.getElementById('indirizzo').value = formData.indirizzo;
-        document.getElementById('contatto').value = formData.contatto;
+        if (formData.contatto === 'on') {
+          document.getElementById('contatto').checked = true;
+        };
         var listForms = document.getElementsByClassName('linkForm');
         
         for (var i = 0; i < listForms.length; i++) {
-          listForms[i].href = 'https://ricerca.typeform.com/to/OHG0is?email='+formData.email+'&id='formData.email;
+          listForms[i].href = 'https://ricerca.typeform.com/to/OHG0is?email='+formData.email+'&id='+formData.email;
         };
         
 
