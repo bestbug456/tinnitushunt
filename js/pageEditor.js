@@ -4,6 +4,8 @@ window.onload = function () {
     		FB.api('/me', function(reply) {
     			document.getElementById('openModal').innerHTML = "Profilo";
           document.getElementById('forms-top').style.display = "inline";
+          document.getElementById('soff').style.display = "none";
+            document.getElementById('sin').style.display = "inline";
     			getPersonalData(response.id);
     		})
 		}else

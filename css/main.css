@@ -40,10 +40,12 @@ padding-top: 5px;
 }
 
 #openModal{
-	margin-left: 55%;
 	margin-top: 5px;
 }
-#textMenu{
+#sin{
+  display: none;
+}
+.textMenu{
 	color: white;
 	font-size: 25px;
 	padding-top: 5px;

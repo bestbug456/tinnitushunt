@@ -9,6 +9,8 @@ function verifyLogin(){
           		$('#userProfile').modal();
 	          	document.getElementById('openModal').innerHTML = "Profilo";
               document.getElementById('forms-top').style.display = "inline";
+              document.getElementById('soff').style.display = "none";
+              document.getElementById('sin').style.display = "inline";
 			});
 
 		}else{
@@ -29,5 +31,7 @@ function showForm() {
           	$('#userProfile').modal();
           	document.getElementById('openModal').innerHTML = "Profilo";
             document.getElementById('forms-top').style.display = "inline";
+            document.getElementById('soff').style.display = "none";
+            document.getElementById('sin').style.display = "inline";
     });
 }

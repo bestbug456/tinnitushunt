@@ -19,7 +19,7 @@ function sendDataForm(id,name){
       },
       error: function(xhr,e){
             if(xhr.status==0){
-                alert('You are offline!!\n Please Check Your Network.');
+                window.location.reload(); 
             }else if(xhr.status==404){
                 alert('Requested URL not found.');
             }else if(xhr.status==500){
@@ -64,17 +64,18 @@ function getDataForm(id){
         if (formData.contatto === 'on') {
           document.getElementById('contatto').checked = true;
         };
+        var linksform = ["https://ricerca.typeform.com/to/OHG0is?email=","https://ricerca.typeform.com/to/Oz5JMv?email="]
         var listForms = document.getElementsByClassName('linkForm');
         
         for (var i = 0; i < listForms.length; i++) {
-          listForms[i].href = 'https://ricerca.typeform.com/to/OHG0is?email='+formData.email+'&id='+formData.email;
+          listForms[i].href = linksform[i]+formData.email+'&id='+formData.email;
         };
         
 
       },
       error: function(xhr,e){
             if(xhr.status==0){
-                alert('You are offline!!\n Please Check Your Network.');
+                window.location.reload(); 
             }else if(xhr.status==404){
                 alert('Requested URL not found.');
             }else if(xhr.status==500){

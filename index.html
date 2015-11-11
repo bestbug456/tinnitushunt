@@ -80,6 +80,8 @@
       	if (response.status === 'connected') {
       		document.getElementById('forms-top').style.display = "inline";
       		document.getElementById('openModal').innerHTML = "Profilo";
+      		document.getElementById('soff').style.display = "none";
+          	document.getElementById('sin').style.display = "inline";
           	$('#closeLogin').click();
           	$('#userProfile').modal();
       	};
@@ -96,7 +98,8 @@
   <body>
 
   <div id='panel' class="row text-center">
-        <p id="textMenu"><img src="img/TinnitusHuntLogo.png" style="width: 20px;" /> La mappa degli acufenizzati, soffri di acufeni? Aiuta la ricerca.</p><br>
+        <div id="soff"><p class="textMenu"><img src="img/TinnitusHuntLogo.png" style="width: 20px;"> La mappa degli acufeni, soffri di acufeni? Aiuta la ricerca.</p></div>
+        <div id="sin"><p class="textMenu"> <img src="img/TinnitusHuntLogo.png" style="width: 20px;"> La mappa degli acufeni.</p></div>
         <div>
         	<a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Partecipa</a>
         	<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#forms" id="forms-top">Questionari</a>
@@ -164,10 +167,13 @@
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title" id="myName">Lista dei form disponibili per aiutare la ricerca</h4><br>
+            <p id="welcomeText">I tuoi dati non verranno mai condivisi pubblicamente se non in forma anonima ed aggregata. Con la registrazione autorizzi al trattamento dei tuoi dati personali secondo la normativa vigente.</p>
         </div>
         <div class="modal-body">
 
-                <p> <a class="typeform-share button linkForm" href="#" data-mode="1" target="_blank">Form di raccolta dati sviluppato da tinnitus hunt</a></p>
+                <p><strong>Racconta del tuo acufene</strong>
+                Rispondendo a questo questionario partecipare alla sezione statistiche del sito. I tuoi dati verranno visualizzati in forma anonima.Compila: <a class="typeform-share btn btn-primary linkForm" href="#" data-mode="1" target="_blank">Descrivi il tuo acufene</a></p>
+                 <p><strong>Mini Tinnitus Questionnaire 12</strong> Dodici domande che forniscono un risultato immediato sull’impatto dell’acufene sulla qualità della tua vita. Pubblicato da: Wolfgang Hiller, Gerhard Goebel, International Journal of Audiology 2004; 43:600–604 Compila: <a class="typeform-share btn btn-primary linkForm" href="#" data-mode="1" target="_blank">MiniTQ12</a></p>
 
 				
         </div>
@@ -214,7 +220,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" id="closeThanks">Chiudi</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onlclick="window.location.href=window.location.href" id="closeThanks">Chiudi</button>
         </div>
       </div>
     </div>
