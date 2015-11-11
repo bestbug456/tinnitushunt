@@ -67,6 +67,7 @@
 
   </script>
 
+  <!-- Bugfix login chrome on iOs -->
   <script type="text/javascript">
   function login() {
     if( navigator.userAgent.match('CriOS') ){
@@ -76,13 +77,19 @@
     }
     else
       FB.login(function(response) {
-        document.getElementById('openModal').innerHTML = "Profilo";
-          $('#closeLogin').click();
-          $('#userProfile').modal();
+      	if (response.status === 'connected') {
+      		document.getElementById('openModal').innerHTML = "Profilo";
+          	$('#closeLogin').click();
+          	$('#userProfile').modal();
+      	};
+
       }, {scope: 'email,public_profile'});
   }
 
   </script>
+
+  <!-- typeform layer -->
+<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
 
   </head>
   <body>
@@ -107,9 +114,7 @@
                 <input class="margin-modal-text input-text-width form-control" type="text" id="indirizzo">
                 <input type="checkbox" id="contatto"> Lascio la mia disponibilità per essere contattato da istituti di ricerca che collaborano con TinnitusHunt.com per essere informato sulla partecipazione a ricerche sull'acufene. (facoltativo) </input>
                
-          <p><a class="typeform-share button" href="https://ricerca.typeform.com/to/OHG0is" data-mode="1" target="_blank">Descrivi il tuo acufene</a>
-<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
-</p>
+          		<a class="typeform-share button linkForm" href="#" data-mode="1" target="_blank">Descrivi il tuo acufene</a>
           
         </div>
         <div class="modal-footer" style="margin-bottom:30px;">
