@@ -3,6 +3,7 @@ window.onload = function () {
     	if (response.status === 'connected'){
     		FB.api('/me', function(reply) {
     			document.getElementById('openModal').innerHTML = "Profilo";
+          document.getElementById('forms-top').style.display = "inline";
     			getPersonalData(response.id);
     		})
 		}else

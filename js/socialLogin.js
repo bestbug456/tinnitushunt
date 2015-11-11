@@ -8,6 +8,7 @@ function verifyLogin(){
 	          	'Ciao ' + reply.name;
           		$('#userProfile').modal();
 	          	document.getElementById('openModal').innerHTML = "Profilo";
+              document.getElementById('forms-top').style.display = "inline";
 			});
 
 		}else{
@@ -27,5 +28,6 @@ function showForm() {
           	getPersonalData();
           	$('#userProfile').modal();
           	document.getElementById('openModal').innerHTML = "Profilo";
+            document.getElementById('forms-top').style.display = "inline";
     });
 }

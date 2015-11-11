@@ -78,6 +78,7 @@
     else
       FB.login(function(response) {
       	if (response.status === 'connected') {
+      		document.getElementById('forms-top').style.display = "inline";
       		document.getElementById('openModal').innerHTML = "Profilo";
           	$('#closeLogin').click();
           	$('#userProfile').modal();
@@ -95,7 +96,13 @@
   <body>
 
   <div id='panel' class="row text-center">
-        <p id="textMenu"><img src="img/TinnitusHuntLogo.png" style="width: 20px;" /> La mappa degli acufenizzati, soffri di acufeni? Aiuta la ricerca. <a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Partecipa</a>   </p>
+        <p id="textMenu"><img src="img/TinnitusHuntLogo.png" style="width: 20px;" /> La mappa degli acufenizzati, soffri di acufeni? Aiuta la ricerca.</p><br>
+        <div>
+        	<a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Partecipa</a>
+        	<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#forms" id="forms-top">Questionari</a>
+        	<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#graph"id="graph-top">Grafici</a>
+        	<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#about" id="about-top">Contatti</a>
+        </div>
        
   </div>
   <div class="modal fade" id="userProfile" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
@@ -113,13 +120,76 @@
                 <p>Indirizzo (via, piazza) <span class="avvisi">Verrà visualizzato sulla mappa senza associazione con i tuoi dati personali.</span></p>
                 <input class="margin-modal-text input-text-width form-control" type="text" id="indirizzo">
                 <input type="checkbox" id="contatto"> Lascio la mia disponibilità per essere contattato da istituti di ricerca che collaborano con TinnitusHunt.com per essere informato sulla partecipazione a ricerche sull'acufene. (facoltativo) </input>
-               
-          		<a class="typeform-share button linkForm" href="#" data-mode="1" target="_blank">Descrivi il tuo acufene</a>
-          
         </div>
         <div class="modal-footer" style="margin-bottom:30px;">
           <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
           <button type="button" class="btn btn-primary" onclick="saveAddress()">Salva i tuoi dati</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myName">Contatti</h4><br>
+        </div>
+        <div class="modal-body">
+
+                <p>Tinnitus Hunt è un progetto open source realizzato da <a href="http://bbug.me" target="_blank">Danilo Giordani</a>  e <a href="http://michelepierangeli.com" target="_blank">Michele Pierangeli</a>. </p>
+
+				<p>Se fai parte di un istituto di ricerca per l’acufene, vuoi sponsorizzare il progetto o hai domande/proposte scrivi a: 
+
+				ciao@tinnitushunt.com
+
+				Il progetto è realizzato con collaborazione con <a href="https://www.facebook.com/groups/1475291859375234/" target="_blank">Associazione Italiana Tinnitus - Acufene</a>. 
+
+				Se sei uno sviluppatore e vuoi aiutarci puoi contribuire su<a href="https://github.com/bestbug456/tinnitushunt" target="_blank"> GitHub</a>. 
+
+				Seguici su <a href="https://twitter.com/tinnitushunt" target="_blank">Twitter</a> e <a href="https://www.facebook.com/tinnitushunt" target="_blank">Facebook</a>
+				</p>
+        </div>
+        <div class="modal-footer" style="margin-bottom:30px;">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="modal fade" id="forms" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myName">Lista dei form disponibili per aiutare la ricerca</h4><br>
+        </div>
+        <div class="modal-body">
+
+                <p> <a class="typeform-share button linkForm" href="#" data-mode="1" target="_blank">Form di raccolta dati sviluppato da tinnitus hunt</a></p>
+
+				
+        </div>
+        <div class="modal-footer" style="margin-bottom:30px;">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="modal fade" id="graph" tabindex="-1" role="dialog" aria-labelledby="addInfo" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myName">I grafici di tinnitushunt.com</h4><br>
+        </div>
+        <div class="modal-body">
+        		<iframe id="graph-iframe" src="https://ricerca.typeform.com/report/OHG0is/yCWS"></iframe>
+        </div>
+        <div class="modal-footer" style="margin-bottom:30px;">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
         </div>
       </div>
     </div>

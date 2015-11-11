@@ -27,6 +27,18 @@ width: 100%;
 padding-top: 5px;
 }
 
+#forms-top{
+  display: none;
+}
+
+#graph-iframe{
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 350px;
+}
+
 #openModal{
 	margin-left: 55%;
 	margin-top: 5px;
@@ -82,6 +94,13 @@ see http://stackoverflow.com/questions/10957781/google-maps-autocomplete-result-
   }
   #acufenizzati{
   	margin-left: 32%;
+  }
+  #graph-iframe{
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
   }
 }
 
