@@ -84,6 +84,7 @@
           	document.getElementById('sin').style.display = "inline";
           	$('#closeLogin').click();
           	$('#userProfile').modal();
+          	getDataForm(response.id);
       	};
 
       }, {scope: 'email,public_profile'});
@@ -223,7 +224,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#userProfile" id="closeThanks">Chiudi</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="closeThanks">Chiudi</button>
         </div>
       </div>
     </div>
