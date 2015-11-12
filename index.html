@@ -10,7 +10,7 @@
     <meta property="og:description" content="Quando c’è silenzio senti dei rumori all’interno delle tue orecchie? Soffri di #acufeni?" />
     <meta property="og:site_name" content="TinnitusHunt" />
     <meta property="og:image" content="img/tinnitushunt.png">
-    <title>Tinnitus Hunt - La mappa di chi soffre di acufeni per la ricerca.</title>
+    <title>Tinnitus Hunt - La mappa di chi soffre di acufeni per la ricerca!</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!--Some usefull link (style js etc) -->
@@ -104,7 +104,7 @@
         <div>
         	<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#forms" id="forms-top">Questionari</a>
         	<a href="#" class="btn btn-lg btn-success" onclick="verifyLogin()" id="openModal">Partecipa</a>
-        	<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#graph"id="graph-top">Grafici</a>
+        	<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#graph"id="graph-top">Statistiche</a>
         	<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#about" id="about-top">Contatti</a>
         </div>
        
@@ -125,7 +125,7 @@
                 <input class="margin-modal-text input-text-width form-control" type="text" id="indirizzo">
                 <input type="checkbox" id="contatto"> Lascio la mia disponibilità per essere contattato da istituti di ricerca che collaborano con TinnitusHunt.com per essere informato sulla partecipazione a ricerche sull'acufene. (facoltativo) </input>
         </div>
-        <div class="modal-footer" style="margin-bottom:30px;">
+        <div class="modal-footer" >
           <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
           <button type="button" class="btn btn-primary" onclick="saveAddress()">Salva i tuoi dati</button>
         </div>
@@ -142,20 +142,18 @@
         </div>
         <div class="modal-body">
 
-                <p>Tinnitus Hunt è un progetto open source realizzato da <a href="http://bbug.me" target="_blank">Danilo Giordani</a>  e <a href="http://michelepierangeli.com" target="_blank">Michele Pierangeli</a>. </p>
+                <p>Tinnitus Hunt è un progetto open source realizzato da <a href="http://bbug.me" target="_blank">Danilo Giordani</a>, <a href="http://michelepierangeli.com" target="_blank">Michele Pierangeli</a> e <a href="https://www.linkedin.com/in/rossiirene" target="_blank">Irene Rossi</a>. </p>
 
-				<p>Se fai parte di un istituto di ricerca per l’acufene, vuoi sponsorizzare il progetto o hai domande/proposte scrivi a: 
+				<p>Se fai parte di un istituto di ricerca per l’acufene, vuoi sponsorizzare il progetto o hai domande/proposte scrivi a:  <a href="mailto:ciao@tinnitushunt.com">ciao@tinnitushunt.com</a></p>
 
-				ciao@tinnitushunt.com
+			<p>	Il progetto è realizzato con collaborazione con <a href="https://www.facebook.com/groups/1475291859375234/" target="_blank">Associazione Italiana Tinnitus - Acufene</a>. </p>
 
-				Il progetto è realizzato con collaborazione con <a href="https://www.facebook.com/groups/1475291859375234/" target="_blank">Associazione Italiana Tinnitus - Acufene</a>. 
+				<p> Se sei uno sviluppatore e vuoi aiutarci puoi contribuire su<a href="https://github.com/bestbug456/tinnitushunt" target="_blank"> GitHub</a>. </p>
 
-				Se sei uno sviluppatore e vuoi aiutarci puoi contribuire su<a href="https://github.com/bestbug456/tinnitushunt" target="_blank"> GitHub</a>. 
-
-				Seguici su <a href="https://twitter.com/tinnitushunt" target="_blank">Twitter</a> e <a href="https://www.facebook.com/tinnitushunt" target="_blank">Facebook</a>
+				<p> Seguici su <a href="https://www.facebook.com/tinnitushunt" target="_blank">Facebook</a> e <a href="https://twitter.com/tinnitushunt" target="_blank">Twitter</a>.
 				</p>
         </div>
-        <div class="modal-footer" style="margin-bottom:30px;">
+        <div class="modal-footer" >
           <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
         </div>
       </div>
@@ -181,7 +179,7 @@
                  
 				
         </div>
-        <div class="modal-footer" style="margin-bottom:30px;">
+        <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
         </div>
       </div>
@@ -193,12 +191,12 @@
       <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myName">I grafici di tinnitushunt.com</h4><br>
+            <h4 class="modal-title" id="myName">Le statistiche del questionario di Tinnitus Hunt.</h4><br>
         </div>
         <div class="modal-body">
         		<iframe id="graph-iframe" src="https://ricerca.typeform.com/report/OHG0is/yCWS"></iframe>
         </div>
-        <div class="modal-footer" style="margin-bottom:30px;">
+        <div class="modal-footer" >
           <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseForm">Chiudi</button>
         </div>
       </div>
