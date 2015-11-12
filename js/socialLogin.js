@@ -8,7 +8,6 @@ function verifyLogin(){
 	          	'Ciao ' + reply.name;
           		$('#userProfile').modal();
 	          	document.getElementById('openModal').innerHTML = "Profilo";
-              document.getElementById('forms-top').style.display = "inline";
               document.getElementById('soff').style.display = "none";
               document.getElementById('sin').style.display = "inline";
 			});
@@ -30,7 +29,6 @@ function showForm() {
           	getPersonalData();
           	$('#userProfile').modal();
           	document.getElementById('openModal').innerHTML = "Profilo";
-            document.getElementById('forms-top').style.display = "inline";
             document.getElementById('soff').style.display = "none";
             document.getElementById('sin').style.display = "inline";
     });
