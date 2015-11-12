@@ -31,13 +31,6 @@ padding-top: 5px;
   display: none;
 }
 
-#graph-iframe{
-    margin: 0;
-    padding: 0;
-    border: none;
-    width: 100%;
-    height: 350px;
-}
 
 #sin{
   display: none;
@@ -94,13 +87,7 @@ see http://stackoverflow.com/questions/10957781/google-maps-autocomplete-result-
   #acufenizzati{
   	margin-left: 32%;
   }
-  #graph-iframe{
-    margin: 0;
-    padding: 0;
-    border: none;
-    width: 100%;
-    height: 100%;
-  }
+
 }
 
 
