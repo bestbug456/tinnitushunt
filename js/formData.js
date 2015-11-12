@@ -23,7 +23,7 @@ function sendDataForm(id,name){
         $('#Thanks').modal();
 
         document.getElementById('forms-top').style.display = "inline";
-        document.getElementById('thanksMessage').innerHTML = "Grazie mille "+name+" per aver inserito i tuoi dati. Il tuo contributo è prezioso aiutaci a diffondere la voce e a sensibilizzare il mondo sul nostro male.";
+        document.getElementById('thanksMessage').innerHTML = "Grazie mille "+name+" per aver inserito i tuoi dati. Il tuo contributo è prezioso, aiutaci a diffondere la voce e a sensibilizzare il mondo sul nostro male.";
       },
       error: function(xhr,e){
             if(xhr.status==0){
