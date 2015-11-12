@@ -78,7 +78,7 @@ function getDataForm(id){
         for (var i = 0; i < listForms.length; i++) {
           listForms[i].href = linksform[i]+formData.email+'&id='+formData.email;
         };
-        
+        document.getElementById('forms-top').style.display = "inline";        
 
       },
       error: function(xhr,e){
