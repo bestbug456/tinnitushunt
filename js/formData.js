@@ -29,7 +29,7 @@ function sendDataForm(id,name){
             if(xhr.status==0){
                 window.location.reload(); 
             }else if(xhr.status==404){
-                alert('Requested URL not found.');
+                alert('Ops abbiamo un problema tecnico, scrivi a ciao@tinnitushunt.com');
             }else if(xhr.status==500){
                 alert('Internel Server Error.');
             }else if(e=='parsererror'){
@@ -85,7 +85,7 @@ function getDataForm(id){
             if(xhr.status==0){
                 window.location.reload(); 
             }else if(xhr.status==404){
-                alert('Requested URL not found.');
+                alert('Ops abbiamo un problema tecnico, scrivi a ciao@tinnitushunt.com');
             }else if(xhr.status==500){
                 alert('Internel Server Error.');
             }else if(e=='parsererror'){

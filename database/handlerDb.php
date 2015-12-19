@@ -74,9 +74,33 @@ function insertDataToDb($database,$ArrayValue){
 		$GLOBALS['errorSql'] = $database->error;
 		$database->close();
 		return false;
-	}else
-		return true;
+	}else{
+		return saveNewGeoCode($ArrayValue[2],$ArrayValue[0],connectToDb());
+	}
+}
 
+function saveNewGeoCode($address,$id, $database){
+	$data = file_get_contents(dirname(__FILE__)."/authDB.txt");
+	$auth = explode("-", $data);
+	$address = urlencode($address);
+	$url = "https://maps.google.com/maps/api/geocode/json?address=".$address."&components=country:IT&sensor=true&key=".$auth[4];
+	$geocode=file_get_contents($url);
+	$address= json_decode($geocode);
+
+	$latitude = $address->results[0]->geometry->location->lat;
+ 	$longitude = $address->results[0]->geometry->location->lng;
+
+	$query = "INSERT INTO geocode (latitude,longitude,id)
+			VALUES ('".$latitude."', '".$longitude."',".$id.") ON DUPLICATE KEY UPDATE latitude='".$latitude."',longitude='".$longitude."'";
+	$result = $database->query($query);
+	if(!$result){
+		$GLOBALS['errorSql'] = $database->error;
+		$database->close();
+		error_log($query.$database->error."\n", 3, "/var/tmp/my-errors.log");
+		return false;
+	}else{
+		return true;
+	}
 }
 
 function getDataFromDb($database,$id){
@@ -111,7 +135,7 @@ function getTotalTinnitus($database){
 }
 
 function getListOfZips($database){
-	$query = "SELECT DISTINCT indirizzo FROM profile";
+	$query = "SELECT DISTINCT * FROM geocode";
 	$result = $database->query($query);
 	if(!$result){
 		$database->close();
@@ -120,14 +144,11 @@ function getListOfZips($database){
 	}else{
 		$database->close();
 		$arrayResult = array();
+		$i=0;
 		while ($row = $result->fetch_assoc()){
-			$row['indirizzo'] = urlencode($row['indirizzo']);
-			$url = "https://maps.google.com/maps/api/geocode/json?address=".$row['indirizzo']."&components=country:IT&sensor=true";
-			$geocode=file_get_contents($url);
-			$address= json_decode($geocode);
-
-			$lat = $address->results[0]->geometry->location->lat;
- 			$lng = $address->results[0]->geometry->location->lng;
+			
+			$geocode[$i][0] = $row['latitude'];
+			$geocode[$i][1] = $row['longitude'];
 			array_push($arrayResult, $geocode);
 		}
 		return $arrayResult;

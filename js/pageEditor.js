@@ -31,7 +31,7 @@ function totAcufenizzati(){
       },
       error: function(xhr,e){
             if(xhr.status==0){
-                alert('You are offline!!\n Please Check Your Network.');
+                alert('Ops abbiamo un problema tecnico, scrivi a ciao@tinnitushunt.com');
             }else if(xhr.status==404){
                 alert('Requested URL not found.');
             }else if(xhr.status==500){
@@ -58,10 +58,10 @@ function listOfZips(){
 	      	var markers = [];
 	      	var latng = [];
 	      	for(i=0;i<address.length;i++){
-	      		latng = JSON.parse(address[i]);
+	      		latng = address[i][0];
 	      		var latLng = new google.maps.LatLng(
-	                            latng.results[0].geometry.location.lat,
-	                            latng.results[0].geometry.location.lng);
+	                            latng[0],
+	                            latng[1]);
 		        var marker = new google.maps.Marker({
 		            position: latLng,
 		            map: map
@@ -74,7 +74,7 @@ function listOfZips(){
       },
       error: function(xhr,e){
             if(xhr.status==0){
-                alert('You are offline!!\n Please Check Your Network.');
+                alert('Ops abbiamo un problema tecnico, scrivi a ciao@tinnitushunt.com');
             }else if(xhr.status==404){
                 alert('Requested URL not found.');
             }else if(xhr.status==500){
